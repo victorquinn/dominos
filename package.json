@@ -13,5 +13,8 @@
     "dominos": "git://github.com/victorquinn/node-dominos-pizza-api.git",
     "express": "^4.12.2",
     "validator": "^3.33.0"
+  },
+  "engines": {
+    "iojs": "1.0.x"
   }
 }

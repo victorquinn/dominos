@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Victor Quinn <mail@victorquinn.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.12.0",
+    "dominos": "git://github.com/victorquinn/node-dominos-pizza-api.git",
+    "express": "^4.12.2"
+  }
 }

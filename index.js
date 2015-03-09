@@ -9,6 +9,8 @@ app.get('/v1/stores', stores.list);
 app.get('/v1/stores/:store_id', stores.info);
 app.get('/v1/stores/:store_id/menu', stores.menu);
 
+app.get('/v1/ordercheese', order.cheese);
+
 var port = process.env.PORT || 5000;
 app.listen(port);
 console.log("Now listening on " + port);

@@ -1,0 +1,94 @@
+FORMAT: 1A
+
+# PinpointPizza
+Pinpoint Pizza is a REST API built using the excellent [Dominos Node.js](https://www.npmjs.com/package/dominos) module by [@RIAEvangelist](https://github.com/RIAEvangelist).
+
+This was created as a sample for an app built using WatchKit and the [SocialRadar](https://www.socialradar.com) SDK which would easily order a pizza to your current location.
+
+# Group Stores
+These methods are used to locate stores around you.
+
+## Stores Collection [/v1/stores{?address}]
+### List stores nearby [GET]
+
++ Parameters
+        
+    + address (required, string, `1111 19th St Nw, 20036`) ... Address around which you want to find Dominos restaurants
+        
++ Response 200 (application/json)
+
+        [{
+            "StoreID": "4344",
+            "IsDeliveryStore": true,
+            "MinDistance": 0.2,
+            "MaxDistance": 0.2,
+            "Phone": "202-223-1100",
+            "AddressDescription": "2029 K St Nw\nWashington, DC 20006",
+            "HolidaysDescription": "",
+            "HoursDescription": "Su-Th 10:00am-1:00am\nFr-Sa 10:00am-2:00am",
+            "ServiceHoursDescription": {
+                "Carryout": "Su-Sa 10:00am-10:00pm",
+                "Delivery": "Su-Th 10:00am-1:00am\nFr-Sa 10:00am-2:00am"
+            },
+            "IsOnlineCapable": true,
+            "IsOnlineNow": true,
+            "IsNEONow": false,
+            "IsSpanish": true,
+            "SubstitutionStore": "",
+            "LocationInfo": null,
+            "LanguageLocationInfo": { "es": null },
+            "AllowDeliveryOrders": true,
+            "AllowCarryoutOrders": true,
+            "IsOpen": true,
+            "ServiceIsOpen": {
+                "Carryout": true,
+                "Delivery": true
+            }
+        }, {
+            "StoreID": "4336",
+            "IsDeliveryStore": false,
+            "MinDistance": 0.7,
+            "MaxDistance": 0.7,
+            "Phone": "202-639-8700",
+            "AddressDescription": "1300 L St Nw\nWashington, DC 20005",
+            "HolidaysDescription": "",
+            "HoursDescription": "Su-Th 10:00am-1:00am\nFr-Sa 10:00am-2:00am",
+            "ServiceHoursDescription": {
+                "Carryout": "Su-Sa 10:00am-10:00pm",
+                "Delivery": "Su-Th 10:00am-1:00am\nFr-Sa 10:00am-2:00am"
+            },
+            "IsOnlineCapable": true,
+            "IsOnlineNow": true,
+            "IsNEONow": false,
+            "IsSpanish": false,
+            "SubstitutionStore": "",
+            "LocationInfo": null,
+            "LanguageLocationInfo": { "es": null },
+            "AllowDeliveryOrders": true,
+            "AllowCarryoutOrders": true,
+            "IsOpen": true,
+            "ServiceIsOpen": {
+                "Carryout": true,
+                "Delivery":true
+            }
+        }]
+
+## Store Info [/v1/stores/{store_id}]
+Get detailed information about a given store
+
++ Parameters
+    + store_id (required, string, `4233`) ... Numeric `id` of the Note to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204

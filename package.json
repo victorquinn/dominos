@@ -1,0 +1,11 @@
+{
+  "name": "PinpointPizza",
+  "version": "1.0.0",
+  "description": "Pinpoint Pizza Backend Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Quinn <mail@victorquinn.com>",
+  "license": "ISC"
+}

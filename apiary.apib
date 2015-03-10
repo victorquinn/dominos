@@ -404,6 +404,8 @@ Get detailed menu for a given store
 
 This method serves a single purpose, ordering a large cheese pizza to the supplied address from the supplied store!
 
+Note, the postalcode with the credit card is the postal code for the billing address and is likely to be different that the postal code to which the pizza will be delivered.
+
 + Request (application/json)
         
         {
@@ -411,6 +413,8 @@ This method serves a single purpose, ordering a large cheese pizza to the suppli
             "first": "Victor",
             "last": "Quinn",
             "email": "mail@victorquinn.com"
+            "address": "1111 19th St NW",
+            "postalcode": "20036"
             "creditcard": {
                 "number": "4111111111111111",
                 "expiration": "0315",

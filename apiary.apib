@@ -1,4 +1,5 @@
 FORMAT: 1A
+HOST: https://pizza.socialradar.com
 
 # PinpointPizza
 Pinpoint Pizza is a REST API built using the excellent [Dominos Node.js](https://www.npmjs.com/package/dominos) module by [@RIAEvangelist](https://github.com/RIAEvangelist).
@@ -395,3 +396,28 @@ Get detailed menu for a given store
                 }
             }
         }
+        
+# Group Orders
+
+## Cheese Pizza [/v1/ordercheese]
+### Order a Cheese Pizza [POST]
+
+This method serves a single purpose, ordering a large cheese pizza to the supplied address from the supplied store!
+
++ Request (application/json)
+        
+        {
+            "phone": "2028765309",
+            "first": "Victor",
+            "last": "Quinn",
+            "email": "mail@victorquinn.com"
+            "creditcard": {
+                "number": "4111111111111111",
+                "expiration": "0315",
+                "security": "123",
+                "postalcode": "20036"
+            }
+        }   
+    
++ Response 200 (application/json)
+

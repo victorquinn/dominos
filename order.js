@@ -55,6 +55,9 @@ module.exports = {
 
         card.Number = req.body.creditcard.number;
         card.CardType = creditcard.cardscheme(req.body.creditcard.number).toUpperCase();
+        if (card.CardType === 'American Express') {
+            card.CardType = 'AMEX';
+        }
         card.SecurityCode = req.body.creditcard.security;
         card.PostalCode = req.body.creditcard.postalcode;
         card.Expiration = req.body.creditcard.expiration;
@@ -83,6 +86,9 @@ module.exports = {
                             });
                         } else {
                             debug('ORDER SUCCESSFUL!');
+                            dominos.track.phone(req.body.phone, function(pizzaData){
+                                debug("Tracking enabled: %s", JSON.stringify(pizzaData, null, 4));
+                            });
                             res.status(200).json({
                                 order_id: order_id,
                                 amount: amount

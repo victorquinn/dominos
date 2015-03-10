@@ -17,6 +17,7 @@ module.exports = {
         // }
 
         // First, make the order
+        debug("The body is %s", JSON.stringify(req.body, null, 4));
 
         var order = new dominos.class.Order();
 
@@ -25,22 +26,25 @@ module.exports = {
         order.Order.FirstName = req.body.first;
         order.Order.LastName = req.body.last;
         order.Order.Email = req.body.email;
-        order.Order.Address.Street = req.body.address;
-        order.Order.Address.PostalCode = req.body.postalcode;
         order.Order.StoreID = req.body.store;
-        order.Order.ServiceMethod = "Delivery";
+        order.Order.ServiceMethod = 'Delivery';
 
-        // @todo this should be the default, but allow other currencies via the API
-        order.Order.Currency = "USD";
+        // Add the address
+        order.Order.Address.Street = req.body.address.street;
+        order.Order.Address.City = req.body.address.city;
+        order.Order.Address.PostalCode = req.body.address.postalcode;
+        order.Order.Address.Region = req.body.address.region;
 
         // Add the large cheese pizza
         var cheesePizza = new dominos.class.Product();
         cheesePizza.Code='14SCREEN';
         order.Order.Products.push(cheesePizza);
 
+        debug('order before being sent: %s', JSON.stringify(order, null, 2));
+
         // Validate this order
         dominos.order.validate(order, function(data) {
-            debug("validated order: %s", JSON.stringify(data, null, 2));
+            debug('validated order: %s', JSON.stringify(data, null, 2));
             if (data.success) {
                 res.status(200).json({
                     order_id: data.result.Order.OrderID

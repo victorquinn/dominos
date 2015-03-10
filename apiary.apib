@@ -77,18 +77,321 @@ These methods are used to locate stores around you.
 Get detailed information about a given store
 
 + Parameters
-    + store_id (required, string, `4233`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + store_id (required, string, `4344`) ... Numeric `id` of the Note to perform action with. Has example value.
 
-### Retrieve a Note [GET]
+### Get info [GET]
 + Response 200 (application/json)
 
-    + Header
+        {
+          "result": {
+            "EstimatedWaitMinutes": "25-35",
+            "IsAVSEnabled": true,
+            "SocialReviewLinks": {
+              "yelp": "http:\/\/yelp.com\/biz\/_KtZqroc5Mcr8k0aEuDrMg",
+              "plus": "http:\/\/www.yelp.com\/biz\/_KtZqroc5Mcr8k0aEuDrMg"
+            },
+            "AcceptableWalletTypes": [
+              "Google"
+            ],
+            "MinimumDeliveryOrderAmount": 10,
+            "SubstitutionStore": "",
+            "LanguageLocationInfo": {
+              "es": null
+            },
+            "LocationInfo": null,
+            "AcceptableCreditCards": [
+              "American Express",
+              "Discover Card",
+              "Mastercard",
+              "Optima",
+              "Visa"
+            ],
+            "AcceptablePaymentTypes": [
+              "Cash",
+              "Check",
+              "GiftCard",
+              "CreditCard"
+            ],
+            "CustomerCloseWarningMinutes": 30,
+            "ServiceHoursDescription": {
+              "Delivery": "Su-Th 10:00am-1:00am\nFr-Sa 10:00am-2:00am",
+              "Carryout": "Su-Sa 10:00am-10:00pm"
+            },
+            "ServiceHours": {
+              "Delivery": {
+                "Sat": [
+                  {
+                    "CloseTime": "01:59",
+                    "OpenTime": "00:00"
+                  },
+                  {
+                    "CloseTime": "23:59",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Fri": [
+                  {
+                    "CloseTime": "00:59",
+                    "OpenTime": "00:00"
+                  },
+                  {
+                    "CloseTime": "23:59",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Thu": [
+                  {
+                    "CloseTime": "00:59",
+                    "OpenTime": "00:00"
+                  },
+                  {
+                    "CloseTime": "23:59",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Wed": [
+                  {
+                    "CloseTime": "00:59",
+                    "OpenTime": "00:00"
+                  },
+                  {
+                    "CloseTime": "23:59",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Tue": [
+                  {
+                    "CloseTime": "00:59",
+                    "OpenTime": "00:00"
+                  },
+                  {
+                    "CloseTime": "23:59",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Mon": [
+                  {
+                    "CloseTime": "23:59",
+                    "OpenTime": "10:00"
+                  },
+                  {
+                    "CloseTime": "00:59",
+                    "OpenTime": "00:00"
+                  }
+                ],
+                "Sun": [
+                  {
+                    "CloseTime": "01:59",
+                    "OpenTime": "00:00"
+                  },
+                  {
+                    "CloseTime": "23:59",
+                    "OpenTime": "10:00"
+                  }
+                ]
+              },
+              "Carryout": {
+                "Sat": [
+                  {
+                    "CloseTime": "22:00",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Fri": [
+                  {
+                    "CloseTime": "22:00",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Thu": [
+                  {
+                    "CloseTime": "22:00",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Wed": [
+                  {
+                    "CloseTime": "22:00",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Tue": [
+                  {
+                    "CloseTime": "22:00",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Mon": [
+                  {
+                    "CloseTime": "22:00",
+                    "OpenTime": "10:00"
+                  }
+                ],
+                "Sun": [
+                  {
+                    "CloseTime": "22:00",
+                    "OpenTime": "10:00"
+                  }
+                ]
+              }
+            },
+            "HolidaysDescription": "",
+            "Holidays": null,
+            "TimeZoneCode": "US\/Eastern",
+            "PreferredCurrency": "USD",
+            "PreferredLanguage": "en-US",
+            "PulseVersionName": "3.8",
+            "PulseVersion": "6.80.157",
+            "BusinessDate": "2015-03-09",
+            "AllowDeliveryOrders": true,
+            "AllowCarryoutOrders": true,
+            "IsSpanish": true,
+            "IsNEONow": false,
+            "AsOfTime": "2015-03-09 19:55:23",
+            "StoreAsOfTime": "2015-03-09 19:55:24",
+            "OnlineStatusCode": "Ok",
+            "IsOpen": true,
+            "IsForceClose": false,
+            "IsForceOffline": false,
+            "CashLimit": 50,
+            "EstimatedCarryoutWaitMinutes": null,
+            "Status": 0,
+            "IsOnlineNow": true,
+            "IsOnlineCapable": true,
+            "IsAffectedByDaylightSavingsTime": true,
+            "TimeZoneMinutes": -240,
+            "HoursDescription": "Su-Th 10:00am-1:00am\nFr-Sa 10:00am-2:00am",
+            "Hours": {
+              "Sat": [
+                {
+                  "CloseTime": "01:59",
+                  "OpenTime": "00:00"
+                },
+                {
+                  "CloseTime": "23:59",
+                  "OpenTime": "10:00"
+                }
+              ],
+              "Fri": [
+                {
+                  "CloseTime": "00:59",
+                  "OpenTime": "00:00"
+                },
+                {
+                  "CloseTime": "23:59",
+                  "OpenTime": "10:00"
+                }
+              ],
+              "Thu": [
+                {
+                  "CloseTime": "00:59",
+                  "OpenTime": "00:00"
+                },
+                {
+                  "CloseTime": "23:59",
+                  "OpenTime": "10:00"
+                }
+              ],
+              "Wed": [
+                {
+                  "CloseTime": "00:59",
+                  "OpenTime": "00:00"
+                },
+                {
+                  "CloseTime": "23:59",
+                  "OpenTime": "10:00"
+                }
+              ],
+              "Tue": [
+                {
+                  "CloseTime": "00:59",
+                  "OpenTime": "00:00"
+                },
+                {
+                  "CloseTime": "23:59",
+                  "OpenTime": "10:00"
+                }
+              ],
+              "Mon": [
+                {
+                  "CloseTime": "23:59",
+                  "OpenTime": "10:00"
+                },
+                {
+                  "CloseTime": "00:59",
+                  "OpenTime": "00:00"
+                }
+              ],
+              "Sun": [
+                {
+                  "CloseTime": "01:59",
+                  "OpenTime": "00:00"
+                },
+                {
+                  "CloseTime": "23:59",
+                  "OpenTime": "10:00"
+                }
+              ]
+            },
+            "AddressDescription": "2029 K St Nw\nWashington, DC 20006",
+            "PostalCode": "20006",
+            "Region": "DC",
+            "City": "Washington",
+            "StreetName": "2029 K St Nw",
+            "Phone": "202-223-1100",
+            "StoreID": "4344"
+          },
+          "success": true
+        }
 
-            X-My-Header: The Value
+## Store Menu [/v1/stores/{store_id}/menu]
+Get detailed menu for a given store
 
-    + Body
++ Parameters
+    + store_id (required, string, `4344`) ... Store id for which to retrieve the menu.
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+### Get info [GET]
++ Response 200 (application/json)
 
-### Remove a Note [DELETE]
-+ Response 204
+        {
+            "Misc": {
+                "Status": 0,
+                "StoreID": "4344",
+                "BusinessDate": "2015-03-09",
+                "StoreAsOfTime": "2015-03-09 14:50:23",
+                "LanguageCode": "en",
+                "Version": "1.001",
+                "ExpiresOn": ""
+            },
+            "Categorization": {
+                "Food": {
+                    "Categories": [
+                        {
+                            "Categories": [
+                                {
+                                    "Categories": [],
+                                    "Code": "BuildYourOwn",
+                                    "Description": "",
+                                    "Products": [
+                                        "S_PIZZA"
+                                    ],
+                                    "Name": "Build Your Own"
+                                },
+                                {
+                                    "Categories": [],
+                                    "Code": "Artisan",
+                                    "Description": "",
+                                    "Products": [
+                                        "S_PIZCT",
+                                        "S_PIZSE",
+                                        "S_PIZSV",
+                                        "S_PIZPT"
+                                    ],
+                                    "Name": "Domino's Artisan™ Pizzas"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }

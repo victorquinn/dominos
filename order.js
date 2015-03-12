@@ -42,6 +42,9 @@ module.exports = {
         var cheesePizza = new dominos.class.Product();
         cheesePizza.Code='14SCREEN';
         order.Order.Products.push(cheesePizza);
+        // Push 2 more pizzas for demo
+        order.Order.Products.push(cheesePizza);
+        order.Order.Products.push(cheesePizza);
 
         // Add payment info
         var card = new dominos.class.Payment();
